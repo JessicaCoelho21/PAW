@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PAW Aula 3</title>
+</head>
+
+<body>
+    <p id="p2">Hello World!</p>
+    <button type="button" id="myButton">Mudar de Cor</button>
+
+    <script>
+        function changeColor() {
+            document.getElementById("p2").style.color = "blue";
+            document.getElementById("myButton").removeEventListener("click", changeColor);
+        }
+
+        document.getElementById("myButton").addEventListener("click", changeColor);
+        //document.getElementById("muButton").onclick = changeColor;
+    </script>
+</body>
+
+</html>
