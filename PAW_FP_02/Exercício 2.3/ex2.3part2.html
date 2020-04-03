@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lighthouse Island Bistro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+        }
+        
+        .header {
+            color: blue;
+            background-color: skyblue;
+            padding: 20px;
+        }
+        
+        .left,
+        .right {
+            width: 25%;
+        }
+        
+        .middle {
+            width: 50%;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+        }
+        
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover {
+            background-color: #555;
+            color: white;
+        }
+        
+        .column {
+            float: left;
+            padding: 10px;
+        }
+        
+        .left,
+        .right {
+            width: 25%;
+        }
+        
+        .middle {
+            width: 50%;
+        }
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Lighthouse Island Bistro</h1>
+    </div>
+
+    <div class="row">
+        <div class="column left" style="background-color:#aaa;">
+            <ul>
+                <li><a href="#">Tutorial</a></li>
+                <li><a href="#">Tutorial</a></li>
+                <li><a href="#">Tutorial</a></li>
+                <li><a href="#">Tutorial</a></li>
+            </ul>
+        </div>
+
+        <div class="column middle" style="background-color:#bbb;">
+            <h3>Locally Roasted Free-Trade Coffee</h3>
+            <p>Indulge in the aroma of freshly ground roast coffee.</p>
+            <h3>Special Pastries</h3>
+            <p>Enjoy a selection of our fresh-baked, organic pastries.</p>
+            <h3>Lunchtime is Anytime</h3>
+            <p>Savor delicious wraps and sandwiches on hearty, whole-grain breads.</p>
+            <h3>Panoramic View</h3>
+            <p>Take in some scenery!</p>
+        </div>
+
+        <div class="column right" style="background-color: #ccc;">
+            <img src="lighthouse.jpg" alt="Lighthouse" width="260" height="145">
+        </div>
+    </div>
+</body>
+
+</html>

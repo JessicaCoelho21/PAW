@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <h1>Inquérito de satisfação da ESTG</h1>
+    <body>
+        <form action="/action_page">
+            <label for="fname">Primeiro nome:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Último nome:</label><br>
+            <input type="text" id="lname" name="lname"><br><br>
+            
+            <label for="gender">Género:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br><br>
+
+            Selecione o curso que frequenta:<br>
+            <input list="cursos">
+            <datalist id="cursos">
+                <option value="Licenciatura em Engenharia Informática"/>
+                <option value="Licenciatura em Solicitadoria"/>
+                <option value="Licenciatura em Ciências Empresariais"/>
+                <option value="Licenciatura em Sistemas de Informação para a Gestão"/>
+            </datalist>
+
+            <br><br>
+            Qual o grau de satisfação em relação ao seu curso?<br>
+            <input type="checkbox" id="grau" name="grau" value="muitosatisfeito">
+            <label for="muitosatisfeito">Muito satisfeito</label><br>
+            <input type="checkbox" id="grau" name="grau" value="satisfeito">
+            <label for="satisfeito">Satisfeito</label><br>
+            <input type="checkbox" id="grau" name="grau" value="nadasatisfeito">
+            <label for="nadasatisfeito">Nada satisfeito</label><br><br>
+        </form>
+    </body>
+</html>

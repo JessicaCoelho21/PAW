@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+    background-color: blanchedalmond;
+    color: lightsalmon;
+}
+
+
+/* Style the top navigation bar */
+
+.navbar {
+    display: flex;
+    background-color: #333;
+}
+
+
+/* Style the navigation bar links */
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+/* Change color on hover */
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+nav {
+    float: left;
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    background-color: blanchedalmond;
+}
+
+nav ul {
+    padding: 0;
+}
+
+article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    text-align: center;
+}
+
+table {
+    float: left;
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: blanchedalmond;
+}
+
+
+/*Responsive layout - makes the two columns/boxes stack on top of each other instead of next 
+    to each other, on small screens */
+
+@media(max-width: 600px) {
+    nav,
+    article {
+        width: 100%;
+        height: auto;
+    }
+}
