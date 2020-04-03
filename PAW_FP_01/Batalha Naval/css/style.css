@@ -1,0 +1,213 @@
+:root {
+  --background-color: #ddd;
+  --highlight-color: #f0f0f0;
+  --shadow-color: #bbb;
+  --block-color: #e9e9e9;
+  --elevation: 8px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+
+@-webkit-keyframes elevate {
+  to {
+    -webkit-box-shadow: calc(var(--elevation) * -1) calc(var(--elevation) * -1) calc(var(--elevation) * 3) var(--highlight-color), var(--elevation) var(--elevation) calc(var(--elevation) * 3) var(--shadow-color);
+            box-shadow: calc(var(--elevation) * -1) calc(var(--elevation) * -1) calc(var(--elevation) * 3) var(--highlight-color), var(--elevation) var(--elevation) calc(var(--elevation) * 3) var(--shadow-color);
+  }
+}
+
+@keyframes elevate {
+  to {
+    -webkit-box-shadow: calc(var(--elevation) * -1) calc(var(--elevation) * -1) calc(var(--elevation) * 3) var(--highlight-color), var(--elevation) var(--elevation) calc(var(--elevation) * 3) var(--shadow-color);
+            box-shadow: calc(var(--elevation) * -1) calc(var(--elevation) * -1) calc(var(--elevation) * 3) var(--highlight-color), var(--elevation) var(--elevation) calc(var(--elevation) * 3) var(--shadow-color);
+  }
+}
+
+.board-container {
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 600px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 6px;
+  -webkit-animation: elevate 600ms 300ms forwards;
+          animation: elevate 600ms 300ms forwards;
+}
+
+.board {
+  position: relative;
+}
+
+.board::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+  width: 100%;
+}
+
+.board > * {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.board > * {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[10];
+      grid-template-columns: repeat(10, 1fr);
+}
+
+@-webkit-keyframes explode {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 100%;
+  }
+}
+
+@keyframes explode {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 100%;
+  }
+}
+
+.board-block {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: crosshair;
+}
+
+.board-block.odd {
+  background: var(--block-color);
+}
+
+.board-block::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(../resources/explosion-sprite.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% center;
+  pointer-events: none;
+}
+
+.board-block.explode::after {
+  -webkit-animation: explode 1s steps(9) forwards;
+          animation: explode 1s steps(9) forwards;
+}
+
+.board-block.water::after {
+  background-image: url(../resources/water.png);
+}
+
+@-webkit-keyframes gangham {
+  to {
+    background-position: 100%;
+  }
+}
+
+@keyframes gangham {
+  to {
+    background-position: 100%;
+  }
+}
+
+.splash {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50%;
+  min-height: 300px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.splash .gangnam {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+}
+
+.splash .gangnam::before {
+  content: '';
+  display: block;
+  padding-top: 177.77778%;
+  width: 100%;
+}
+
+.splash .gangnam > * {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.splash .gangnam > * {
+  background-image: url(../resources/GANGNAM-sprite.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% center;
+  -webkit-animation: gangham 4s steps(21) infinite;
+          animation: gangham 4s steps(21) infinite;
+}
+
+.finished .splash {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #202020;
+    --highlight-color: #2c2c2c;
+    --shadow-color: #161616;
+    --block-color: #292929;
+  }
+}
+/*# sourceMappingURL=style.css.map */

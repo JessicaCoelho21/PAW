@@ -1,0 +1,123 @@
+@import mixins
+
+\:root
+	--background-color: #ddd
+	--highlight-color: #f0f0f0
+	--shadow-color: #bbb
+	--block-color: #e9e9e9
+
+	--elevation: 8px
+
+$bgColor: var(--background-color)
+$highlightColor: var(--highlight-color)
+$shadowColor: var(--shadow-color)
+$blockColor: var(--block-color)
+$elevation: var(--elevation)
+
+body
+	padding: 0
+	margin: 0
+	background-color: $bgColor
+	display: flex
+	justify-content: stretch
+	align-items: center
+	min-height: 100vh
+
+@keyframes elevate
+	to
+		box-shadow: calc(#{$elevation} * -1) calc(#{$elevation} * -1) calc(#{$elevation} * 3) $highlightColor, #{$elevation} #{$elevation} calc(#{$elevation} * 3) $shadowColor
+
+.board-container
+	padding: 10px
+	margin-left: auto
+	margin-right: auto
+	width: 100%
+	max-width: 600px
+	box-sizing: border-box
+	border-radius: 6px
+	animation: elevate 600ms 300ms forwards
+
+.board
+	+aspect(4,4)
+
+	> *
+		display: grid
+		grid-template-columns: repeat(10, 1fr)
+
+
+@keyframes explode
+	from
+		background-position-x: 0
+
+	to
+		background-position-x: 100%
+
+.board-block
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: center
+	cursor: crosshair
+
+	&.odd
+		background: $blockColor
+
+	&::after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-image: url(../resources/explosion-sprite.png)
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: 0% center
+		pointer-events: none
+
+	&.explode::after
+		animation: explode 1s steps(9) forwards
+	&.water::after
+		background-image: url(../resources/water.png)
+
+
+@keyframes gangham
+	to
+		background-position: 100%
+
+.splash
+	display: none
+	align-items: center
+	justify-content: center
+	position: fixed
+	left: 0
+	right: 0
+	top: 50%
+	min-height: 300px
+	transform: translateY(-50%)
+	z-index: 100
+	background: rgba(0, 0, 0, 0.6)
+
+	.gangnam
+		display: inline-block
+		+aspect(225,400)
+		width: 100px
+		> *
+			background-image: url(../resources/GANGNAM-sprite.png)
+			background-repeat: no-repeat
+			background-size: cover
+			background-position: 0% center
+			animation: gangham 4s steps(21) infinite
+
+
+.finished .splash
+	display: flex
+
+@media (prefers-color-scheme: dark)
+	\:root
+		--background-color: #202020
+
+		--highlight-color: #2c2c2c
+		--shadow-color: #161616
+		--block-color: #292929
