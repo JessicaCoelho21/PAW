@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exemplo JSON slide 37</title>
+</head>
+
+<body>
+    <h1>Slide 37</h1>
+
+    <script>
+        var data = '{"name": "mkyong", "age": 30, "address": {"streetAddress": "88 8th Street", "city": "New York"}, "phoneNumber": {"number": "111 111-1111", "type": "fax"}}';
+        var json = JSON.parse(data);
+
+        alert(json["name"]); //mkyong
+        alert(json.name); //mkyong
+
+        alert(json.address.streetAddress); //88 8th Street
+        alert(json["address"].city); //New York
+
+        alert(json.phoneNumber[0].number); //111 111-1111
+        alert(json.phoneNumber[1].type); //fax
+
+        alert(json.phoneNumber.number); //undefined
+    </script>
+</body>
+
+</html>
