@@ -1,0 +1,17 @@
+{
+    "name": "slide61",
+    "version": "1.0.0",
+    "description": "",
+    "main": "slide61.js",
+    "scripts": {
+        "start": "node slide61.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Jessica",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "fs": "0.0.1-security",
+        "url": "^0.11.0"
+    }
+}
