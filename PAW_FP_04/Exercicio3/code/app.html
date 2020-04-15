@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/app.css">
+    <title>Formulário de Satisfação do Restaurante X</title>
+</head>
+
+<body>
+    <main>
+        <h1>Formulário de Satisfação do Restaurante X</h1>
+
+        <form id="quest">
+            <label for="name" class="questionHead">Nome do Cliente: </label>
+            <input id="name" name="name" type="text" placeholder="Nome">
+
+            <label for="age" class="questionHead">Idade: </label>
+            <input id="age" name="age" type="number" placeholder="Idade">
+
+            <label for="postCode" class="questionHead">Código Postal: </label>
+            <input id="postCode" name="pCode" type="text" placeholder="Código Postal">
+            <br>
+
+            <label for="vote" class="questionHead">Qualidade da comida (de 1 a 10): </label>
+            <input class="vote" name="foodQ" type="range" min="0" max="10" />
+
+            <label for="vote" class="questionHead">O preço foi adequado à comida servida? (de 1 a 10): </label>
+            <input class="vote" name="priceQ" type="range" min="0" max="10" />
+
+            <label for="vote" class="questionHead">Qualidade do serviço (de 1 a 10): </label>
+            <input class="vote" name="serviceQ" type="range" min="0" max="10" />
+
+            <button id="submit">Enviar</button>
+        </form>
+
+        <form id="search" action="/consult">
+            <label for="key" class="questionHead">Insira a chave para consultar as suas respostas:</label>
+            <input id="key" name="key" type="text" placeholder="chave de consulta">
+            <button id="submit">Consultar</button>
+        </form>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

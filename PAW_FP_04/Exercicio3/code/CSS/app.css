@@ -1,0 +1,39 @@
+html, body {
+  margin: 0px;
+  background-color: #a5a5a5;
+}
+
+h1 {
+  text-align: left;
+  margin-left: 20px;
+  color: #731111;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form > * {
+  width: 350px;
+  margin-left: 20px;
+}
+
+.questionHead {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#submit {
+  margin-top: 10px;
+}
+
+#search {
+  margin-top: 10px;
+}
+/*# sourceMappingURL=app.css.map */
