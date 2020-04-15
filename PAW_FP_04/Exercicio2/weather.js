@@ -18,6 +18,7 @@ app.get('/daily', (req, res) => {
     const query = parseQuery(q.query)
     const { lat, lon } = query || {}
     const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${openweathermaps_key}`
+
     fetch(url)
         .then((r) => r.json())
         .then((r) => {
@@ -32,6 +33,7 @@ app.get('/forecast', (req, res) => {
     const query = parseQuery(q.query)
     const { lat, lon } = query || {}
     const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${openweathermaps_key}`
+
     fetch(url)
         .then((r) => r.json())
         .then((r) => {
