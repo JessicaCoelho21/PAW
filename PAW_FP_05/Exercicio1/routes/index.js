@@ -13,7 +13,6 @@ router.post("/", (req, res) => {
         email: req.body.email,
         book: req.body.book,
         read: req.body.read,
-        notread: req.body.notread,
         description: req.body.description
     }
 
@@ -25,7 +24,6 @@ router.post("/", (req, res) => {
         email: req.body.email,
         book: req.body.book,
         read: req.body.read,
-        notread: req.body.notread
     })
 })
 

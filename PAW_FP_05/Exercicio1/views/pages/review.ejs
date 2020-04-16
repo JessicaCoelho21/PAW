@@ -15,7 +15,7 @@
         <%= description %>
     </p>
 
-    <h3>Review by</h3>
+    <h3>Review by: </h3>
 
     <p><b>Author:</b>
         <%= name %>
@@ -26,11 +26,7 @@
     </p>
 
     <p> <b>Leu o livro completo?:</b>
-        <% if (read == "on") { %>
-            <p>True</p>
-            <% } else { %>
-                <p>False</p>
-                <% } %>
+        <%= read %>
     </p>
 </body>
 
