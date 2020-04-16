@@ -8,8 +8,6 @@ router.get("/", (req, res) => {
 })
 
 router.post("/", (req, res) => {
-    //let data = JSON.stringify(req.body)
-
     let obj = {
         name: req.body.name,
         email: req.body.email,
@@ -20,14 +18,6 @@ router.post("/", (req, res) => {
     }
 
     jsonfile.writeFileSync("reviews.json", obj, { flag: 'a' })
-
-    /*
-    fs.writeFileSync("reviews.json", data, function(err) {
-        if (err) {
-            console.log(err);
-        }
-    })
-    */
 
     res.render("pages/review", {
         description: req.body.description,
