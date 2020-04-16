@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Review do Livro</h1>
+
+    <h3>Review: </h3>
+    <p>
+        <%= description %>
+    </p>
+
+    <h3>Review by</h3>
+
+    <p>Author:
+        <%= name %>
+    </p>
+
+    <p>Email:
+        <%= email %>
+    </p>
+
+    <p>Leu o livro completo?:
+        <% if (leu == "on") { %>
+            <p>True</p>
+            <% } else { %>
+                <p>False</p>
+                <% } %>
+    </p>
+</body>
+
+</html>
