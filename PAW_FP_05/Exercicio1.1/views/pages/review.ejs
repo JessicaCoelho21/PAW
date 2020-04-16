@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -16,16 +17,16 @@
 
     <h3>Review by</h3>
 
-    <p>Author:
+    <p><b>Author:</b>
         <%= name %>
     </p>
 
-    <p>Email:
+    <p><b>Email:</b>
         <%= email %>
     </p>
 
-    <p>Leu o livro completo?:
-        <% if (leu == "on") { %>
+    <p> <b>Leu o livro completo?:</b>
+        <% if (read == "on") { %>
             <p>True</p>
             <% } else { %>
                 <p>False</p>

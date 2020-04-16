@@ -10,6 +10,7 @@ app
     .use(express.urlencoded({ extended: true }))
     .set('view engine', 'ejs')
     .use("/", indexRouter)
+    .use(express.static('public'))
 
 .listen(PORT, () => {
     console.log("Servidor a correr em: http://localhost:3000")
