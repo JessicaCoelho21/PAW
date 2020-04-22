@@ -9,25 +9,25 @@
 
 <body>
     <h1>Review do Livro
-        <%= book %>
+        <%= item.book %>
     </h1>
 
     <h3>Review: </h3>
     <p>
-        <%= description %>
+        <%= item.description %>
     </p>
 
     <h3>Review by: </h3>
 
     <p><b>Author:</b>
-        <%= name %>
+        <%= item.name %>
     </p>
 
     <p><b>Email:</b>
-        <%= email %>
+        <%= item.email %>
     </p>
 
-    <p> <b>Leu o livro completo?: <%= read %></b>
+    <p> <b>Leu o livro completo?: <%= item.read %></b>
     </p>
 </body>
 

@@ -1,7 +1,6 @@
 const express = require("express")
 const router = express.Router()
 let fs = require("fs")
-let jsonfile = require("jsonfile")
 const path = require('path')
 
 router.get("/", (req, res) => {
