@@ -12,18 +12,6 @@ router.get("/", (req, res) => {
 })
 
 router.post("/", (req, res) => {
-    /*
-    let obj = {
-        name: req.body.name,
-        email: req.body.email,
-        book: req.body.book,
-        read: req.body.read,
-        description: req.body.description
-    }
-    
-    jsonfile.writeFileSync("reviews.json", obj, { flag: 'a' })
-    */
-
     const dbPath = path.resolve('db', 'reviews.json')
     const dataRaw = fs.readFileSync(dbPath) || '[]'
     const data = JSON.parse(dataRaw.toString())
