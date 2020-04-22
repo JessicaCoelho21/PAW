@@ -5,14 +5,14 @@ const fs = require("fs")
 
 router.get('/emailBook', (req, res) => {
     const dbPath = path.resolve('db', 'reviews.json');
-    const rev = JS0N.parse(fs.readFileSync(dbPath));
+    const rev = JSON.parse(fs.readFileSync(dbPath));
 
     res.render('pages/reviewEmailBook', { list: rev });
 });
 
 router.get('/:email/:book', (req, res) => {
     const dbPath = path.resolve('db', 'reviews.json')
-    const rev = JS0N.parse(fs.readFileSync(dbPath))
+    const rev = JSON.parse(fs.readFileSync(dbPath))
 
     let index
     const email = req.params.email
