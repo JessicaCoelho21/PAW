@@ -3,6 +3,20 @@ const router = express.Router()
 const fs = require("fs")
 const path = require('path')
 
+function validation(req) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (typeof req.body.name !== 'string' || req.body.name == null) {
+        req.body.name.setCustomValidity('Name invalid')
+    } else if (re.test(req.body.email) == false) { //Se o email não cumprir a variável re
+        req.body.email.setCustomValidity('Email invalid')
+    } else if (typeof req.body.book !== 'string' || req.body.book == null) {
+        req.body.book.setCustomValidity('Book invalid')
+    } else if (typeof req.body.description !== 'string' || req.body.description == null) {
+        req.body.description.setCustomValidity('Description invalid')
+    }
+}
+
 router.get("/", (req, res) => {
     const dbPath = path.resolve('db', 'reviews.json')
     const dataRaw = fs.readFileSync(dbPath) || '[]'
