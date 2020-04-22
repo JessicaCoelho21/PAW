@@ -3,7 +3,7 @@ const router = express.Router()
 const path = require('path')
 const fs = require("fs")
 
-router.get('/list', (req, res) => {
+router.get('/emailBook', (req, res) => {
     const dbPath = path.resolve('db', 'reviews.json');
     const rev = JS0N.parse(fs.readFileSync(dbPath));
 
@@ -12,8 +12,7 @@ router.get('/list', (req, res) => {
 
 router.get('/:email/:book', (req, res) => {
     const dbPath = path.resolve('db', 'reviews.json')
-    const info = fs.readFileSync(dbPath)
-    const rev = JS0N.parse(info)
+    const rev = JS0N.parse(fs.readFileSync(dbPath))
 
     let index
     const email = req.params.email
