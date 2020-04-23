@@ -64,4 +64,23 @@ employeeController.delete = function(req, res) {
     });
 };
 
+employeeController.listPositions = async function(req, res) {
+    try {
+        const filters = {}
+        if (req.query.salary) {
+            filters.salary = {
+                $gte: parseFloat(req.query.salary)
+            }
+        }
+        if (req.query.position) {
+            filters.position = req.query.position
+        }
+        const employeesList = await Employee.find(filters)
+        res.render('employees', { employees: employeesList, filters: req.query })
+    } catch (e) {
+        res.render('employees', { employees: [] })
+    }
+
+}
+
 module.exports = employeeController;
