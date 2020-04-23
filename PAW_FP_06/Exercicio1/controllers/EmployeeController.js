@@ -15,9 +15,8 @@ employeeController.list = async function(req, res) {
 //Show employee by id
 employeeController.show = async function(req, res) {
     console.log('ID', req.params.id)
-
-    const employeesList = await Employee.findById(req.params.id);
-    res.render('employees/show', { employees })
+    const employeeResult = await Employee.findById(req.params.id);
+    res.render('employees/show', { employee: employeeResult })
 };
 
 //Create employee
@@ -28,10 +27,7 @@ employeeController.create = function(req, res) {
 //Save new employee
 employeeController.save = async function(req, res) {
     try {
-        console.log('ok')
-        res.send('ok');
         const result = await Employee.create(req.body)
-            //
         res.redirect(`/employees/show/${ result._id }`)
     } catch (e) {
         res.send('error')
