@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Submissão de Reviews de Livros</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h1>Reviews</h1>
+    <form method="POST">
+        <label for="name" class="question">Name: </label>
+        <input id="name" name="name" type="text" placeholder="Name">
+        <br><br>
+
+        <label for="email" class="question">Email: </label>
+        <input id="email" name="email" type="email" placeholder="Email">
+        <br><br>
+
+        <label for="book" class="question">Book: </label>
+        <input id="book" name="book" type="text" placeholder="Book">
+        <br><br>
+
+        <label for="description" class="question">Description: </label>
+        <input id="description" name="description" type="text" placeholder="Description">
+        <br><br>
+
+        <input type="radio" name="read" id="read" value="Yes"> Read
+        <input type="radio" name="read" id="read" value="No"> Not Read
+        <br><br>
+
+        <label for="image" class="question">Please, load the book's cover: </label>
+        <input type="file" name="image">
+        <br><br>
+
+        <button type="submit" id="button">Submit</button>
+    </form>
+</body>
+
+</html>

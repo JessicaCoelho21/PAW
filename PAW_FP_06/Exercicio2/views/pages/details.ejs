@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Submissão de Reviews de Livros</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h1>Review do Livro
+        <%= item.book %>
+    </h1>
+
+    <h3>Review: </h3>
+    <p>
+        <%= item.description %>
+    </p>
+
+    <h3>Review by: </h3>
+
+    <p><b>Author:</b>
+        <%= item.name %>
+    </p>
+
+    <p><b>Email:</b>
+        <%= item.email %>
+    </p>
+
+    <p> <b>Leu o livro completo?: <%= item.read %></b>
+    </p>
+</body>
+
+</html>

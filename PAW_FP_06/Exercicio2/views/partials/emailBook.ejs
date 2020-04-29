@@ -1,0 +1,12 @@
+<div>
+    <h3>Reviews Disponíveis</h3>
+    <% list.forEach((item, index) => { %>
+        <div>
+            <h4>
+                <%= item.name %>
+            </h4>
+
+            <a href="/review/<%= item.email %>/<%= item.book %>"> link </a>
+        </div>
+        <% }) %>
+</div>

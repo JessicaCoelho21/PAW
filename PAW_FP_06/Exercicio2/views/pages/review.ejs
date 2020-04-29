@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Submissão de Reviews de Livros</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h1>Review do Livro
+        <%= book %>
+    </h1>
+
+    <h3>Review: </h3>
+    <p>
+        <%= description %>
+    </p>
+
+    <h3>Review by: </h3>
+
+    <p><b>Description's Author:</b>
+        <%= name %>
+    </p>
+
+    <p><b>Email:</b>
+        <%= email %>
+    </p>
+
+    <p> <b>Leu o livro completo?: <%= read %></b>
+    </p>
+
+    <p>Capa do livro: </p>
+    <br>
+    <img src="<%= image %>">
+</body>
+
+</html>
