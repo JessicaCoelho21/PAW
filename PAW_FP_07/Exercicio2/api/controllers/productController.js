@@ -46,10 +46,31 @@ const deleteProduct = async(req, res) => {
     res.send(deleteProduct)
 }
 
+const setProductById = async(req, _, next) => {
+    try {
+        const product = await Product
+            .findById(req.params.productId)
+            .catch((e) => {
+                return null
+            })
+
+        if (product) {
+            req.product = product
+            next()
+        } else {
+            next(new Error('not found'))
+        }
+    } catch (e) {
+        next(e)
+    }
+}
+
+
 module.exports = {
     createProduct,
     getAllProducts,
     getProductById,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    setProductById
 }

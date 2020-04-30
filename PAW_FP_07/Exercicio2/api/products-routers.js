@@ -14,4 +14,7 @@ productRouter.put('/:productId', productsController.updateProduct)
 
 productRouter.delete('/:productId', productsController.deleteProduct)
 
+// this will set the product on req.product - for any route that contains :productId
+productRouter.param('productId', productsController.setProductById)
+
 module.exports = productRouter
