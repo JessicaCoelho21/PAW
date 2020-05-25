@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>List of Products</h1>
+
+    <h3>Server-side rendering</h3>
+    <% products.forEach((product) => { %>
+        <div>
+            <%= product.name %>
+        </div>
+        <% }) %>
+
+            <div>
+                <h3>Client-side rendering</h3>
+                <div class="my-list"></div>
+            </div>
+
+            <script src="/js/ListProducts.js">
+                /*
+                        function render() {
+                            const listElement = document.querySelector('.my-list')
+                            listElement.innerHTML = 'loading...'
+                            fetch('/api/products')
+                                .then((result) => result.json())
+                                .then((result) => {
+                                    const children = result.map((product) => {
+                                        return `<div>${product.name}</div>`
+                                    }).join('')
+                                    listElement.innerHTML = children
+                                })
+                        }
+                        render()
+                        */
+            </script>
+</body>
+
+</html>

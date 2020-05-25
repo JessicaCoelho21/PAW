@@ -1,0 +1,15 @@
+<div>
+    <h2>Product Add</h2>
+    <div>
+        <label>Product Name:
+    <input [(ngModel)]="productData.name" placeholder="Product Name"/>
+    </label><br>
+        <label>Product Desc:
+    <input [(ngModel)]="productData.description" placeholder="Product Description"/>
+    </label><br>
+        <label>Product Quantity:
+    <input [(ngModel)]="productData.quantity" placeholder="Product Quantity"/>
+    </label><br>
+    </div>
+    <button (click)="addProduct()">Save</button>
+</div>
